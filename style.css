@@ -1,0 +1,141 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@300;600&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    
+    font-family: 'Roboto Slab', serif;
+}
+
+body {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #f3eded;
+    background-color: #e0aa4c;
+
+    font-family: "Inter", sans-serif;
+   
+}
+
+.wrapper {
+    position: relative;
+    height: 100vh;
+    width: 100%;
+    overflow: hidden;
+    padding: 30px 0;
+    display: flex;
+}
+
+@media (min-width:368px) {
+    .wrapper {
+        height: 45rem;
+        width: 23rem;
+        border-radius: 40px;
+        border: 8px solid #2e2121;
+    }
+
+    
+
+}
+
+.wrapper .screen {
+    min-width: 100%;
+    flex: 1;
+    transition: all 0.3s;
+}
+
+.screen-backdrop {
+    width: 135%;
+    height: 45rem;
+    position: absolute;
+    top: 0;
+    background-color: hsl(280, 16%, 4%);
+    z-index: -1;
+    transition: all 0.3s;
+}
+#camera,
+#camera--view,
+#camera--sensor,
+#camera--output {
+    position: fixed;
+    height: 40rem;
+    width: 22rem;
+    
+    object-fit: cover;
+    user-select: none;
+    pointer-events: stroke;
+    overflow: hidden;
+}
+
+#camera--view,
+#camera--sensor,
+#camera--output {
+    transform: scaleX(-1);
+    filter: FlipH;
+    border: 1px solid rgb(5, 5, 5);
+    
+;
+    
+}
+
+#camera--trigger {
+    width: 65px;
+    background-color: rgb(39, 37, 37);
+    color: rgb(11, 11, 11);
+    font-size: 20px;
+    border-radius: 36px;
+    border: 4px solid rgb(242, 231, 231);
+    padding: 15px;
+    text-align: center;
+    box-shadow: 0 5px 10px 0 rgba(0, 0, 0, 0.2);
+    position: fixed;
+    bottom: 50px;
+    left: calc(50% - 50px);
+    cursor: pointer;
+    transition: all 0.5s linear ease-in-out;
+    margin-left: 15px;
+    margin-bottom: 5px;
+}
+
+#camera--trigger:hover {
+    background-color: rgb(83, 81, 81);
+    color: rgb(16, 15, 15);
+    
+}
+
+.taken {
+    height: 300px !important;
+    width: 300px !important;
+    transition: all 0.5s ease-in;
+    border: solid 3px white;
+    border-radius: 10px;
+    box-shadow: 0 5px 10px 0 rgba(0, 0, 0, 0.2);
+    top: 200px;
+    right: 125px;
+    z-index: 2;
+    user-select: none;
+}
+
+.gopal{
+    font-size: 40px;
+    text-align: start;
+  
+    margin-top: 3rem;
+    margin-left: -31rem;
+    color: transparent;
+    font-weight: 800;
+    -webkit-text-stroke: 1px #fff;
+    background: url(/back.png);
+    -webkit-background-clip: text;
+    background-position: 0 0;
+    animation: back 20s linear infinite;
+}
+
+@keyframes back {
+    100% {
+        background-position: 2000px 0;
+    }
+}
